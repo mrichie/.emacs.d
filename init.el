@@ -84,3 +84,11 @@
   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
 
 (setq-default c-basic-offset 4)
+
+(require 'slim-mode)
+
+;; Setup ruby-mode
+(add-to-list 'load-path "site-lisp/ruby-mode") ; must be added after any path containing old ruby-mode
+(autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
+(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
