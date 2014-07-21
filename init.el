@@ -50,6 +50,22 @@
 ;; Setup Hippie
 (require 'setup-hippie)
 
+;; Install extensions if they're missing
+(defun init--install-packages ()
+  (packages-install
+   '(magit
+     jade-mode
+     enh-ruby-mode
+     yaml-mode
+     auto-complete
+     js2-mode)))
+
+(condition-case nil
+    (init--install-packages)
+  (error
+   (package-refresh-contents)
+   (init--install-packages)))
+
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
 (dolist (file (directory-files defuns-dir t "\\w+"))
@@ -88,10 +104,7 @@
 
 (setq-default c-basic-offset 4)
 
-(require 'slim-mode)
-
-;; Setup ruby-mode
-(add-to-list 'load-path "site-lisp/ruby-mode") ; must be added after any path containing old ruby-mode
-(autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
-(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+(require 'expand-region)
+(require 'multiple-cursors)
+(require 'smart-forward)
+(require 'change-inner)

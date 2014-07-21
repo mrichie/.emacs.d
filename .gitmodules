@@ -25,9 +25,3 @@
 [submodule "site-lisp/smart-forword"]
 	path = site-lisp/smart-forword
 	url = https://github.com/magnars/smart-forward.el.git
-[submodule "site-lisp/slim-mode"]
-	path = site-lisp/slim-mode
-	url = https://github.com/slim-template/emacs-slim.git
-[submodule "site-lisp/ruby-mode"]
-	path = site-lisp/ruby-mode
-	url = https://github.com/zenspider/enhanced-ruby-mode.git
