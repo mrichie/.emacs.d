@@ -58,6 +58,7 @@
      enh-ruby-mode
      yaml-mode
      auto-complete
+     markdown-mode
      js2-mode)))
 
 (condition-case nil
@@ -105,9 +106,12 @@
 (when (file-exists-p user-settings-dir)
   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
 
-(setq-default c-basic-offset 4)
-
 (require 'expand-region)
 (require 'multiple-cursors)
 (require 'smart-forward)
 (require 'change-inner)
+
+(setq-default c-basic-offset 4)
+
+(ac-config-default)
+(setq ac-auto-start 2)
