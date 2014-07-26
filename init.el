@@ -59,6 +59,7 @@
      yaml-mode
      auto-complete
      markdown-mode
+     hyde
      js2-mode)))
 
 (condition-case nil
