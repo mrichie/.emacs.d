@@ -116,3 +116,5 @@
 
 (ac-config-default)
 (setq ac-auto-start 2)
+
+(require 'hyde)
