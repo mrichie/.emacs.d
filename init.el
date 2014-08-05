@@ -50,10 +50,14 @@
 ;; Setup Hippie
 (require 'setup-hippie)
 
+;; Setup Yasnippets
+;;(require 'setup-yasnippet)
+
 ;; Install extensions if they're missing
 (defun init--install-packages ()
   (packages-install
    '(magit
+     yasnippet
      jade-mode
      enh-ruby-mode
      yaml-mode
