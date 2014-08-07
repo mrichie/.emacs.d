@@ -51,7 +51,7 @@
 (require 'setup-hippie)
 
 ;; Setup Yasnippets
-;;(require 'setup-yasnippet)
+(require 'setup-yasnippet)
 
 ;; Install extensions if they're missing
 (defun init--install-packages ()
